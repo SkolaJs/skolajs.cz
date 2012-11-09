@@ -30,6 +30,8 @@ html(lang='cs')
   body
     include navbar
     .container
+      a.forkme.no-print.hidden-phone(href='https://github.com/skolajs', target='_blank')
+        img(src='/img/forkme.png', alt='Fork me on GitHub')
       include flashes
       #content
         block content
