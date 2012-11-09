@@ -14,4 +14,4 @@ jslint:
 nodeunit:
 	$(NODEUNIT) ./tests
 
-.PHONY: jslint jslintfix
+.PHONY: jslint jslintfix nodeunit test
