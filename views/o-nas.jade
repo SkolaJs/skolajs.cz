@@ -1,0 +1,101 @@
+extends layout
+
+block title
+  title ŠkolaJs › O nás
+
+block content
+
+  .row
+    .span6.hidden-phone
+      h1 Kdo jsme
+      p Projekt ŠkolaJs.cz vznikl zájmovým sdružením JavaScript geeků,
+        | kteří objevili vnitřní krásu, možnosti a použitelnost JavaScriptu
+        | ve webových, serverových i mobilních aplikacích a 
+        | kteří mají ambici znalosti školit a šířit dále.
+
+      p Škola vytváří ideální prostředí pro zvýšení adaptability 
+        | a konkurenceschopnosti firmy v globálním internetovém prostředí,
+        | kde neustále měnící se prostředí přeje připraveným a 
+        | usnout ve vývoji a inovacích znamená ztratit pozici na trhu. 
+        | Věříme, že naše služby Vám pomohou k dosažení nových trhů s globálním
+        | přesahem pomocí webových či mobilních aplikací Vám
+        | umožníme růst a rychle reagovat na změny požadavků trhu.
+
+    .span6
+      .well
+        .pull-left
+          h1 Kontakt
+          p
+            a.btn(href=email('sluzby@skolajs.cz'), target='_blank', title='Odeslat email')
+              i.icon-envelope
+            |  sluzby&#64;skolajs.cz
+          address 2.&nbsp;patro, dveře&nbsp;210<br>
+            | Československé armády&nbsp;287<br>
+            | 500&nbsp;03 Hradec&nbsp;Králové
+        .pull-right(style='max-width:40%')
+          img(src='/img/logo-skolajs.png', alt='ŠkolaJs')
+        .clearfix
+        p
+          a(href='//maps.google.com/maps?q=Ceskoslovenské+armády+287,Hradec+Králové,Czech+Republic&hl=en&ie=UTF8&sll=50.210178,15.82962&sspn=0.011549,0.033023&oq=Hradec+kr%C3%A1lov%C3%A9,+%C4%8Ceskoslovensk%C3%A9+arm%C3%A1dy+287%2F19&t=h&hnear=%C4%8Ceskoslovensk%C3%A9+arm%C3%A1dy+287%2F19,+500+03+Hradec+Kr%C3%A1lov%C3%A9,+Czech+Republic&z=16')
+            img(src='//maps.googleapis.com/maps/api/staticmap?center=Ceskoslovenské+armády+287,Hradec+Králové,Czech+Republic&zoom=16&size=600x300&maptype=roadmap&markers=color:blue%7C50.210178,15.82962&sensor=false', width=600, height=300)
+
+  h1 Náš tým
+  #team.row
+    .span6
+      .well
+        h2 Mirek Behan <small>manažer</small>
+
+        .pull-left
+          img.img-polaroid.foto(src='/img/mirek-behan.jpg', width=150, height=150, alt='Mirek Behan', style='width:150px;height:150px')
+        .pull-left
+          .links
+            .link
+              a.btn(href=email('mirek@skolajs.cz'), target='_blank', title='Odeslat email')
+                i.icon-envelope
+              |  mirek&#64;skolajs.cz
+            .link
+              a.btn(href='tel:+420723029819')
+                i.icon-phone
+              |  <small>+420&nbsp;</small>723<small>&nbsp;</small>029<small>&nbsp;</small>819
+            .link
+              a.btn.btn-skype(href='skype:mirek.behan?chat')
+                img(src='http://mystatus.skype.com/smallicon/mirek%2Ebehan', width=16, height=16, alt="Skype status", style='width:16px;height:16px')
+              |  mirek.behan
+
+        .clearfix
+        hr
+        p Mirek po úspěšném absolvování magisterského studia aplikované informatiky na Masarykově univerzitě pracoval
+          | na mezinárodních projektech v korporátních společnostech IBM, O2 a Vodafone, kde působil především jako konzultant
+          | v oblasti procesního řízení a správy databází.
+        p V současnosti dokončuje doktorské studium na univerzitě Hradec Králové, kde se podílí na výuce předmětů
+          | v oblastech umělé inteligence, mobilních aplikací a smart řešení.
+          | V současnosti se zabývá migracemi aplikací z webových na mobilní platformy například pomocí PhoneGap frameworku.
+
+    .span6
+      .well
+        .center
+        h2 Pavel Lang <small>JavaScript&nbsp;guru</small>
+
+        .pull-left
+          img.img-polaroid.foto(src='/img/langpavel.jpg', width=150, height=150, alt='Pavel Lang', style='width:150px;height:150px')
+        .pull-left
+          .links
+            .link
+              a.btn(href=email('pavel@skolajs.cz'), target='_blank', title='Odeslat email')
+                i.icon-envelope
+              |  pavel&#64;skolajs.cz
+            .link
+              a.btn(href='tel:+420775377776', title='')
+                i.icon-phone
+              |  <small>+420&nbsp;</small>775<small>&nbsp;</small>377<small>&nbsp;</small>776
+            .link
+              a.btn(href='https://github.com/langpavel', target='_blank', title='Zobrazit profil na GitHubu')
+                i.icon-github
+              |  langpavel
+        .clearfix
+        hr
+        p 
+          | Pavel je klasickým příkladem hackera, který přez 15 let kóduje a vyzkoušel všechny možné programovací jazyky
+          | od QBasicu, Pascalu, Assembleru, Deplhi, C++ a C# po PHP či Python. Žádný jazyk však ho neokouzlil natolik, jako
+          | JavaScript potom, co poznal jeho skrytá tajemství.
+        p Ve volném čase se věnuje projektu Node.js a komunitě kolem JavaScriptu.

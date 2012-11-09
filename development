@@ -1,0 +1,2 @@
+#!/bin/sh
+NODE_REPL=yes NODE_ENV=development DEBUG="* -send -stylus:*" node server.js

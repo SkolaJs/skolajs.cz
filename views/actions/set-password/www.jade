@@ -1,0 +1,39 @@
+extends ../layout
+
+block navbar-user
+
+block content
+  h1 Obnovení hesla
+
+  .row
+    .span5
+      form.form-horizontal(method='POST')
+        +csrf
+        .error
+          if locals.error
+            p.text-error= error
+        div.control-group
+          label.control-label Email
+          div.controls
+            .input-prepend
+              span.add-on: i.icon-envelope
+              span.uneditable-input= action.data.email
+
+        div.control-group
+          label.control-label(for="password") Heslo
+          div.controls
+            .input-prepend
+              span.add-on: i.icon-key
+              input#password(name='pass', type="password", placeholder="heslo")
+        div.control-group
+          label.control-label(for="confirmPassword") Heslo znovu
+          div.controls
+            .input-prepend
+              span.add-on: i.icon-key
+              input#confirmPassword(name='pass2', type="password", placeholder="kontrola hesla")
+        div.control-group
+          div.controls
+            +submit('Nastavit heslo')
+            | 
+            input.btn.btn-danger(type='button', name='cancel', value='Zrušit požadavek') 
+

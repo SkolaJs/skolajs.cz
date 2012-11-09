@@ -1,0 +1,61 @@
+extends ../layout
+
+mixin sample(file)
+  != highlight(loadFile('./views/slides/samples/'+file))
+
+block content
+  .slide
+    h1 Historie JavaScriptu
+    ul
+      li Netscape
+      li MS Internet Explorer
+
+  .slide
+    h1 Datové typy
+    ul
+      li <code>typeof</code> operátor:
+        ul.inline
+          li <code>'undefined'</code>
+          li <code>'number'</code>
+          li <code>'string'</code>
+          li <code>'object'</code>, <code>Array.isArray(value)</code>
+          li <code>'function'</code> — speciální typ objektu
+      li <code>instanceof</code> operátor
+      li
+        a(href='http://jsfiddle.com') <code>Object.prototype.toString.call(value)</code>
+        ul.inline
+          li <code>[object Number]</code>
+          li <code>[object String]</code>
+          li <code>[object Object]</code>
+          li <code>[object Array]</code>
+          li <code>[object Function]</code>
+
+  .slide
+    h1 Oblast platnosti proměnné — scope
+    ul
+      li <code>var</code> statement
+      li pouze uvnitř těla funkce, ne složených bloků
+      li hoisting » platnost identifikátorů je přesunuta na začátek těla funkce
+
+  .slide
+    h1 Hoisting — příklad 1
+    +sample('hoisting1.js')
+
+  .slide
+    h1 Hoisting — příklad 2
+    +sample('hoisting2.js')
+
+  .slide
+    h1 Closure <small>(uzávěr)</small>
+    +sample('closure.js')
+
+  .slide
+    h1 Objekty
+    ul
+      li literál <code>{}</code>
+      li operátor <code>new</code>
+      li <code>Object.create()</code>
+
+  .slide
+    h1 Konstruktor — speciální typ funkce
+    pre: code.js.jsfiddle

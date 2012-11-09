@@ -1,0 +1,5 @@
+#!/bin/sh
+cd "`realpath \`dirname "$0"\``"
+
+kill `cat ./redis.pid`
+kill `cat ./mongo/mongod.lock`

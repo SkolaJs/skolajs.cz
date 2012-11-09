@@ -1,0 +1,29 @@
+{
+  "name": "skolajs.cz",
+  "private": true,
+  "version": "0.0.1",
+  "main": "./app/index",
+  "scripts": {
+    "test": "make test"
+  },
+  "dependencies": {
+    "async": "~0.1.22",
+    "bcrypt": "~0.7.2",
+    "browserify": "~1.16.1",
+    "connect-redis": "~1.4.4",
+    "debug": "~0.7.0",
+    "express": "~3.0.0",
+    "jade": "~0.27.6",
+    "mongodb": "~1.1.10",
+    "mongoose": "~3.3.1",
+    "mongoose-timon": "~0.0.1",
+    "nib": "~0.8.2",
+    "node-syntaxhighlighter": "~0.8.1",
+    "nodemailer": "~0.3.29",
+    "redis": "~0.8.1",
+    "stylus": "~0.29.0"
+  },
+  "devDependencies": {
+    "nodeunit": "~0.7.4"
+  }
+}

@@ -1,0 +1,7 @@
+block flashes
+  #flashes
+    - var flashes = getFlashes()
+    each flash in flashes
+      .alert(class='alert-'+flash.type)
+        button.close(type="button", data-dismiss="alert") ×
+        = flash.msg

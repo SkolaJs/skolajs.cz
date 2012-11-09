@@ -1,0 +1,49 @@
+extends ../layout
+
+block navbar-user
+
+block content
+  h1 Nastavení hesla
+
+  .row
+    .span5
+      form.form-horizontal(method='POST')
+        legend Vytvoření účtu
+        +csrf
+        .error
+          if locals.error
+            p.text-error= error
+        div.control-group
+          label.control-label Email
+          div.controls
+            .input-prepend
+              span.add-on: i.icon-envelope
+              span.uneditable-input= action.data.email
+
+        div.control-group
+          label.control-label(for="nickname") Jméno nebo přezdívka
+          div.controls
+            .input-prepend
+              span.add-on: i.icon-user
+              input#nickname(name='nickname', type="text", placeholder="jméno/přezdívka")
+
+        div.control-group
+          label.control-label(for="password") Heslo
+          div.controls
+            .input-prepend
+              span.add-on: i.icon-key
+              input#password(name='pass', type="password", placeholder="heslo")
+
+        div.control-group
+          label.control-label(for="confirmPassword") Heslo znovu
+          div.controls
+            .input-prepend
+              span.add-on: i.icon-key
+              input#confirmPassword(name='pass2', type="password", placeholder="kontrola hesla")
+
+        div.control-group
+          div.controls
+            +submit('Nastavit heslo')
+            | 
+            input.btn.btn-danger(type='button', name='cancel', value='Zrušit požadavek') 
+

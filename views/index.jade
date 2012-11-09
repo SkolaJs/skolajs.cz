@@ -1,0 +1,47 @@
+extends layout
+
+block title
+  title ŠkolaJs
+
+block content
+
+  //- Main hero unit for a primary marketing message or call to action
+  #main.hero-unit.well
+    h1 Škola JavaScriptu
+    p Vytváření interaktivních webových aplikací je dnes jednodušší než kdykoli v minulosti!
+    p Staňte se mistry JavaScriptu, návštěvníci Vašich webů Vás budou milovat a navíc je to zábava!
+
+  //- Example row of columns
+  .row
+    .span6
+      .well(style='min-height:200px')
+        h2: a(href='/sluzby') Nabídka služeb
+        .pull-right: img(src='/img/main-education.png', width=parseInt(370/3), height=parseInt(304/3), alt='', style='width:123px;height:101px')
+        p
+          | Připravili jsme pro Vás nabídku školení a kurzů od základních až po pokročilá či specializovaná témata
+        p
+          | Věříme, že Vás potěší i možnost konzultací a vzdálené podpory
+        p.no-print: a.btn.btn-primary(href='/sluzby') Nabídka služeb &raquo;
+        .clearfix
+
+    .span6
+      .well(style='min-height:200px')
+        h2
+          a(href='#') JavaScript
+          small <br>referenční příručka
+        .pull-right: img(src='/img/main-reference.png', width=parseInt(225/3), height=parseInt(300/3), alt='', style='width:75px;height:100px')
+
+        p.muted Připravujeme…
+
+        .clearfix
+
+    //- Not production ready
+      .span4
+        .well
+          h2: a(href='#') Interaktivní prezentace
+          .pull-right: img(src='/img/main-interaction.png', width=parseInt(250/3), height=parseInt(280/3), alt='', style='width:83px;height:93px')
+          p Pro zájemce jsme vytvořili prezentace, které mohou posloužit pro rámcovou představu o obsahu našich školení
+          p.no-print: a.btn.btn-primary(href='/slides') Více &raquo;
+
+          .clearfix
+

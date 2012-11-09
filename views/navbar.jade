@@ -1,0 +1,22 @@
+nav.navbar.navbar-inverse.navbar-fixed-top
+  .navbar-inner
+    .container
+      a.btn.btn-navbar(data-toggle='collapse', data-target='.nav-collapse')
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.brand(href='/')
+        img(src='/img/logo-skolajs-dark.png', alt='ŠkolaJs', width=110, height=37, style='width:110px;height:37px')
+
+      .pull-right
+        include navbar-user
+
+      .nav-collapse.collapse
+        ul.nav.pull-right
+          li
+            form(action='https://developer.mozilla.org/cs/search').navbar-search.pull-right
+              input.search-query(type='search', results=10, autosave='skolajs', name='q')
+          li.divider &nbsp;
+        ul.nav
+          li: a(href='/sluzby') Služby
+          li: a(href='/o-nas') O nás

@@ -1,0 +1,90 @@
+extends layout
+
+block title
+  title ŠkolaJs › Služby
+
+mixin poptavka(jmeno)
+  block
+  .no-print
+    a.btn(href='/kontakt?subject=' + encodeURIComponent(jmeno)) Dotaz »
+
+block content
+
+  .row
+    .span12
+      #skoleni.well
+        h1 Školení
+        p
+          | Připravili jsme pro Vás nabídku školení a kurzů od základních až po pokročilá či specializovaná témata
+        p
+          | Věříme, že Vás potěší i možnost konzultací a vzdálené podpory
+  
+  .row
+    .span6
+      h2 JavaScript
+
+      p 
+        | Tento programovací jazyk je v současnosti nejrozšířenějším na světě.
+        | Základem efektivního kódu jsou techniky jednovláknových asynchronních volání,
+        | které maximalizují výkon vašich skriptů
+
+      P 
+        | Málokdo ve skutečnosti tento mocný jazyk ovládá.
+        | Proto jsme pro Vás připravili sérii kurzů,
+        | kde se společně podíváme hlouběji na principy, konstrukce
+        | a budoucí vlastnosti, které přináší navrhovaný standard 
+        a.external(href='http://wiki.ecmascript.org/doku.php?id=harmony:harmony', target='_blank') ECMA Harmony
+
+      p 
+        | Dále si představíme moderní agilní framework 
+        a.external(href='http://angularjs.org/', target='_blank') AngularJS
+        |  od Google
+
+      p.no-print: a.btn.btn-primary(href='/sluzby/javascript') Více »
+
+    .span6
+      h2
+        img(src='/img/nodejs.png', alt='Node.js', title='Node.js', width=143, height=40, style='width:143px;height:40px')
+      p 
+        | Díky vysokému výkonu JavaScriptového Enginu 
+        a.external(href='http://code.google.com/p/v8/', target='_blank') V8
+        |  od Google je možné a výhodné
+        | používat JavaScript také v serverových aplikacích. 
+        | O tom, že to není vůbec špatný nápad svědčí i popularita projektu Node.js,
+        | který se stabilně drží mezi nejpopulárnějšími projekty na 
+        | GitHubu a sdružuje komunitu nejlepších vývojářů z celého světa.
+      p 
+        | Node.js používá stále více světoznámých společností:
+        | Microsoftu, Yahoo, LinkedIn, eBay a stovky dalších…
+
+      +poptavka('Školení Node.js')
+      //- p.no-print: a.btn.btn-primary(href='/sluzby/nodejs') Více »
+
+  hr.no-print
+
+  .row
+    .span6
+      h1 Konzultace a vzdálená podpora
+      img.pull-right(src='/img/service-remote.jpg', width=parseInt(276/2.5), height=parseInt(413/2.5), alt='', style='width:110px;height:165px')
+      p
+        | Nabízíme Vám poradenskou činnost s možností podpory jak Vašich webových,
+        | tak i serverových aplikací a to přímo u Vás nebo vzdáleně.
+      p
+        | Dále poskytujeme konzultace ve stylu 
+        a.external(href='http://cs.wikipedia.org/wiki/Extr%C3%A9mn%C3%AD_programov%C3%A1n%C3%AD', target='_blank') Extrémního programování (XP)
+        | , kde absorbace znalosti JavaScriptu Vašich zaměstnanců je násobně efektivnější.
+      p
+        | Také máme bohaté zkušenosti s administrací Linuxových systémů, 
+        | které jsou neoddělitelnou součástí kvalitních řešení.
+      p
+        +poptavka('Konzultace')
+      .clearfix
+
+    .span6
+      h1 Outsourcing
+      img.pull-right(src='/img/service-outsourcing.jpg', width=parseInt(387/2.5), height=parseInt(309/2.5), alt='', style='width:155px;height:124px')
+      p
+        | Poskytujeme expertní službu BodyShopping, kde je možné si najmout na omezenou dobu konzultanta,
+        | který Vaší problematiku vyřeší a implementuje na místě či vzdáleně na míru Vašim požadavkům.
+      p
+        +poptavka('Outsourcing')

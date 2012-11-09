@@ -1,0 +1,14 @@
+extends layout
+
+block content
+
+  h1 Stats!
+  hr
+  h2 Request headers
+  textarea.session(spellcheck='false', style='height: 160px; width:100%; max-width:100%; font-family:monospace; font-size:11px; line-height:1')
+    = JSON.stringify(req.headers, null, 2)
+  hr
+  h2 Session
+  textarea.session(spellcheck='false', style='height: 340px; width:100%; max-width:100%; font-family:monospace; font-size:11px; line-height:1')
+    = JSON.stringify(session, null, 2)
+  hr

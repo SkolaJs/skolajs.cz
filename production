@@ -1,0 +1,3 @@
+#!/bin/sh
+kill `pidof skolajs` 
+NODE_ENV=production node ./server.js >> data/skolajs.log 2>> data/skolajs-err.log &

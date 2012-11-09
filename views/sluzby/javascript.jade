@@ -1,0 +1,233 @@
+extends layout
+
+block title
+  title ŠkolaJs › Mastering JavaScript 
+
+//-
+  mixin objednavka(jmeno)
+    form.form-horizontal(action='/nabidka', method='GET')
+      block
+      .btn-group.no-print
+        button.btn(type='submit', name='typ', value='poptavka') Dotaz »
+        button.btn.btn-success(type='submit', name='typ', value='objednavka') Objednat »
+
+mixin objednavka(jmeno)
+  .cenovka
+    block
+    .btn-group.no-print
+      a.btn(href='/kontakt?subject=' + encodeURIComponent('Dotaz na školení - JavaScript - "' + jmeno + '"')) Dotaz »
+      a.btn.btn-success(href='/kontakt?subject=' + encodeURIComponent('Objednávka školení - JavaScript - "' + jmeno + '"')) Objednat »
+
+block content
+  
+  h1 Seriál: Mastering JavaScript
+  .pull-right: img(src='/img/main-education.png', width=parseInt(370/3), height=parseInt(304/3), alt='', style='width:123px;height:101px;margin-top:15px')
+  .well.hero-unit
+    // -
+      p
+        | Seriál je zaměřen na hluboké porozumění fundamentálním principům programovacího jazyka
+
+    p 
+      | JavaScript je v současnosti nejrozšířenější skriptovací jazyk na světě.
+      | Jak ale tento mocný jazyk funguje a v čem je jeho skutečná síla ví ve skutečnosti málokdo.
+
+    .clearfix
+
+  hr.no-print
+
+  article#zaklady
+    h2.well Základní principy jazyka
+    .row
+      .span4
+        p
+          | Cílem tohoto kurzu je objasnit základní principy, jejichž pochopení je nutné pro tvorbu kvalitního a efektivního kódu
+          ul
+            li způsob práce s proměnnými; co jsou hodnoty a reference
+            li správné používání operátorů, jazykových konstruktů a klíčových slov
+            li principy funkcí, oblast platnosti proměnné, scope, closure
+            li objekty — literál, new, Object.create()
+            li funkce jako konstruktor
+            li hoisting (neboli „vyzdvižení“) identifikátorů
+            li úvod do prototypové dědičnosti
+
+      .span4
+        h3 Filozofie a historie
+        p 
+          | Proč je JavaScript právě takový jaký je? Na jednu stranu umožňuje krátký a elegantní zápis
+          | skutečně efektivního kódu, na druhou stranu se kodéři často uchylují k neefektivním
+          | a špatně čitelným konstrukcím. Za to může často neznalost možností jazyka
+          | a medvědí služba některých populárních JavaScriptových knihoven.
+        p
+          em Porozumění filozofii jazyka je více důležité než znalost celé jeho gramatiky.
+
+      .span4
+        h3 Gramatika a sémantika
+        p 
+          | V tomto úvodním kurzu se dozvíte o historickém vývoji JavaScriptu
+          | — proč a k řešení jaké množiny problémů byl jazyk navržen.
+        p
+          | Cílem je porozumět všemu kolem základních konstrukcí jazyka, jako
+          | jsou např. podmínky, cykly, výrazy či méně používaným konstrukce
+          | <code>switch</code>, <code>with</code>…
+    .row
+      .span12
+        .pull-right
+          +objednavka('Základní principy jazyka')
+            p Cena
+            p
+              span.cena 2.950 Kč 
+              | (4 hodiny)
+        .clearfix
+
+  hr
+
+  article#objekty
+    h2.well Datové typy a objekty pod lupou
+    .row
+      .span4
+        p
+          | Tento kurz je určen pro znalejší JavaScriptu. Zaměřuje se na práci s objekty,
+          | způsoby jejich vytváření a rozšiřování s důrazem na implementaci dědičnosti
+          | a bude představebna aplikace návrhových vzorů.
+        p
+          | Představíme Vám vybrané návrhové vzory, které se v JavaScriptu mohou implementovat elegantněji.
+          | V krátkém výletu do budoucnosti si řekneme o projektu Harmony, který je budoucí
+          | verzí jazyka, jež bude podporovat nová API nové užitečné jazykové konstrukce.
+
+      .span4
+        h3 Datové typy
+        p
+          | JavaScript není typový jazyk, přesto se interpret s datovými typovy umí efektivně vypořádat.
+          ul
+            li základní datové typy a referenční typy
+            li způsoby určování typu proměnné
+            li co je to prototyp objektu
+            li způsoby vytváření objektů, new Object.create()
+            li jak se v JavaScriptu „dědí“
+            li využití closure — schovávání proměnných
+
+      .span4
+        h3 JavaScript a návrhové vzory
+        p
+          | Představíme si možné implementace návrhových vzorů
+          ul
+            li Singleton (jedináček)
+            li Factory Method (tovární metoda)
+            li Factory (továrna)
+            li Virtual Constructor
+    .row
+      .span12
+        .pull-right
+          +objednavka('Datové typy a objekty pod lupou')
+            p Cena
+            p
+              span.cena 2.950 Kč 
+              | (4 hodiny)
+        .clearfix
+
+  hr
+
+  article#moderni-api
+    h2.well JavaScript a webové prohlížeče
+    .row
+      .span4
+        p
+          | Cílem kurzu je poukázat na nativní API, které je výhodnější používat na místo populárních frameworků,
+          | např. kombinace metod <code>getElementById,</code> <code>getElementsByTagName,</code>
+          | <code>querySelector</code> a <code>querySelectorAll.</code>
+          | Naučíme se efektivně pracovat s DOM stromem tak, aby byl kód přehledný.
+        p
+          | Dozvíte se o hlacních zástupcích modulových systémů pro JavaScript: 
+          a.external(href='http://www.commonjs.org/', target='_blank') CommonJS
+          | /
+          a.external(href='http://wiki.commonjs.org/wiki/Modules/1.1.1', target='_blank') Modules
+          |  a 
+          span(title='Asynchronous Module Definition') AMD 
+          em (Asynchronous Module Definition)
+          | , které Vám umožní psát znovupoužitelné a udržovatelné skripty.
+
+      .span4
+        h3 Realtime Web
+        p
+          | Zasvětíme Vás do realtime komunikace a povíme si o technikách, které se dnes používají
+          | a o jejich výhodách a nevýhodách. Podíváme se podrodně na XMLHttpRequest, techniku 
+          | <em title="Lze přeložit jako „dlouhé dotazování“">„Long Polling“</em>,
+          | a dozvíte se o výhodách WebSocketů.
+          | Protože každá technologie je vhodná na jiný typ aplikace, zmíníme i režie a limity,
+          | které se projevují při systémové implementaci, zejména WebSockety mají některá úskalí,
+          | kterým se lze vyhnout.
+
+      .span4
+        h3 HTML5 API
+        p
+          | Dále se seznámíme s novými prvky HTML5, zejména
+          | <code>&lt;video&gt;,</code> <code>&lt;audio&gt;,</code> <code>&lt;canvas&gt;</code>
+          | a podrobíme Vaší pozornosti i starší i když trochu nedoceněné <code>&lt;svg&gt;.</code>
+    .row
+      .span12
+        .pull-right
+          +objednavka('JavaScript v prohlížečích, práce s DOM, moderní API')
+            p Cena
+            p
+              span.cena 2.950 Kč 
+              | (4 hodiny)
+        .clearfix
+
+  hr
+
+  article#angular
+    h2.well Framework AngularJS
+
+    .row
+      .span4
+        h3 Cíl kurzu
+        p
+          | Cílem kurzu je proniknout do tajů revoluční technologie a populárního frameworku 
+          a.external(href='http://angularjs.org/', target='_blank') AngularJS
+          |  od Google, který od základu zjednodušuje vývoj skutečně dynamických webových aplikací.
+
+      .span4
+        blockquote(cite='http://angularjs.org/')
+          p
+            | HTML je skvělý jazyk pro deklarování statických dokumentů,
+            | ale pro dynamické pohledy webových aplikací nená HTML žádnou podporu.
+            | <br>AngularJS umožňuje rozšířit HTML jazyk pro aplikace.
+            | Výsledné prostředí je mimořádně expresivní, čitelné, a přívětivé pro vývoj.
+          cite: a(href='http://angularjs.org/') AngularJS
+
+
+      .span4
+        blockquote(cite='http://angularjs.org/')
+          p
+            | Ostatní frameworky řeší nedostatky HTML buď abstrakcí
+            | HTML, CSS, a nebo i JavaScriptu, nebo poskytují imperativní způsob manipulace s DOM.
+            | Ani jeden způsob však necílí samotnou podstatu problému:
+            | <br>HTML není navrženo pro dynamické aplikace.
+          cite: a(href='http://angularjs.org/') AngularJS
+
+    .row
+      .span12
+        .pull-right
+          +objednavka('Framework AngularJS')
+            p Cena
+            p
+              span.cena 3.950 Kč 
+              | (4 hodiny)
+        .clearfix
+
+  hr
+
+  h2 Objednávka celého sériálu
+
+  p Pokud si objednáte všechny čtyři kurzy, dostanete výhodnou slevu!
+    ul
+      li Základní principy jazyka
+      li Datové typy a objekty pod lupou
+      li JavaScript v prohlížečích, práce s DOM, moderní API
+      li Framework AngularJS
+
+  .pull-right
+    +objednavka('Minisérie Mastering JavaScript')
+      p Cena seriálu (4 × 4 hodiny):
+      p: span.cena 9.950 Kč
+  .clearfix

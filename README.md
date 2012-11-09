@@ -1,0 +1,3 @@
+SkolaJs.cz website
+==================
+

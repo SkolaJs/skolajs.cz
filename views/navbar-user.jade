@@ -1,0 +1,31 @@
+block navbar-user
+  if(!user.loggedIn)
+    .btn-group
+      a.btn.btn-inverse(href='/login', rel='nofollow')
+        i.icon-user.icon-white
+        |  Přihlásit
+      a.btn.btn-inverse.dropdown-toggle(data-toggle='dropdown', href='#'): span.caret
+      ul.dropdown-menu
+        li: a(href='/login', rel='nofollow')
+          i.icon-signin
+          |  Přihlásit
+        li.divider
+        li: a(href='/login#registrace', rel='nofollow')
+          i.icon-plus-sign
+          |  Registrace
+
+  else
+    .btn-group
+      a.btn.btn-inverse(href='/profil', rel='nofollow')
+        i.icon-user.icon-white
+        |  #{user}
+      a.btn.btn-inverse.dropdown-toggle(data-toggle='dropdown', href='#'): span.caret
+      ul.dropdown-menu
+        li: a(href='/profil', rel='nofollow')
+          i.icon-user
+          |  #{user}
+        li.divider
+        li: a(href='/logout', rel='nofollow')
+          i.icon-signout
+          |  Odhlásit
+

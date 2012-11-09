@@ -1,0 +1,38 @@
+extends layout
+
+block title
+  title ŠkolaJs › Napište nám
+
+block content
+  .row
+    .span12
+      form.form-horizontal(action='/kontakt', method='POST')
+        legend Napište nám
+        +csrf
+        .error
+          if locals.error
+            p.text-error= error
+        div.control-group
+          label.control-label(for="email") Email pro odpověď
+          div.controls
+            .input-prepend
+              span.add-on: i.icon-envelope
+              input#email(name='email', type="email", placeholder="email pro odpověď", value=body.email || user.getPrimaryEmail())
+        div.control-group
+          label.control-label(for="tel") Telefon
+          div.controls
+            .input-prepend
+              span.add-on: i.icon-phone
+              input#tel(name='tel', type="text", placeholder="telefon", value=body.tel)
+        div.control-group
+          label.control-label(for="subject") Předmět
+          div.controls
+            .input-prepend
+              span.add-on: i.icon-question-sign
+              input#subject.span6(name='subject', type="text", placeholder="předmět", value=body.subject || req.query.subject)
+
+        div.control-group
+          textarea#textMessage.input-block-level(name='text', rows=10, placeholder="Váš dotaz…")= body.text
+
+        div.control-group
+          +submit('Odeslat')

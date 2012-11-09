@@ -1,0 +1,40 @@
+extends layout
+
+block title
+  title ŠkolaJs › Node.js
+
+//-
+  mixin objednavka(jmeno)
+    form.form-horizontal(action='/nabidka', method='GET')
+      block
+      .btn-group.no-print
+        button.btn(type='submit', name='typ', value='poptavka') Dotaz »
+        button.btn.btn-success(type='submit', name='typ', value='objednavka') Objednat »
+
+mixin objednavka(jmeno)
+  block
+  .btn-group.no-print
+    a.btn(href='/kontakt?subject=' + encodeURIComponent('Dotaz na školení - Node.js - "' + jmeno + '"')) Dotaz »
+    a.btn.btn-success(href='/kontakt?subject=' + encodeURIComponent('Objednávka školení - Node.js - "' + jmeno + '"')) Objednat »
+
+block content
+//- NOT READY....  
+  h1 Node.js <small>minisérie</small>
+  .pull-right: img(src='/img/main-education.png', width=parseInt(370/3), height=parseInt(304/3), alt='', style='width:123px;height:101px;margin-right:10px')
+  .well
+    p: big
+      | minisérie zaměřená na vynikající platformu Node.js
+
+    p 
+      | Node.js je 
+
+    .clearfix
+
+
+  hr
+
+  h2 Objednávka celé minisérie
+
+  +objednavka('Minisérie Mastering Node.js')
+    p Cena celé minisérie (4 × 4 hodiny):
+    p: span.cena 9.990 Kč
