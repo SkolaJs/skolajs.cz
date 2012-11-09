@@ -1,0 +1,16 @@
+#!/bin/sh
+cd "`realpath \`dirname "$0"\``"
+
+npm install
+
+EXAMPLES=`find . | grep \\\\.example\\\\.`
+
+for FILE in $EXAMPLES; do 
+  TARGET=`echo $FILE | sed s/\\\\.example//`
+  echo "$TARGET: creating from $FILE..."
+  cp -i "$FILE" "$TARGET"
+done
+
+if [ ! -e ./.git/hooks/pre-commit ]; then
+  ln -s ../../tools/git-hooks/pre-commit ./.git/hooks/pre-commit && echo "Git pre-commit hook created"
+fi
