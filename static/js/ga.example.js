@@ -1,3 +1,7 @@
+console.log('Google analytics will be loaded ' +
+            'if you uncomment it in statics/ga.js. ' +
+            'Do not forget to se correct UAID below');
+/*
 (function(window, undefined) {
 
   // set your UA
@@ -64,3 +68,4 @@
   s.parentNode.insertBefore(ga, s);
 
 })(window);
+*/
