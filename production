@@ -1,3 +1,3 @@
 #!/bin/sh
-kill `pidof skolajs` 
-NODE_ENV=production node ./server.js >> data/skolajs.log 2>> data/skolajs-err.log &
+#kill `pidof skolajs` 
+NODE_ENV=production ./node_modules/.bin/forever start --sourceDir /home/skolajs/skolajs/ -o ./data/skolajs.log -e ./data/skolajs-err.log -l ./data/forever.log ./server.js 
